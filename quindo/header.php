@@ -19,7 +19,7 @@
 	<?php // Meta SEO Information ?>
 	<meta name="title" content="<?php bloginfo('name'); ?> <?php wp_title("",true); ?>">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
-	<meta name="author" content="BIGEYE Agency">
+	<meta name="author" content="Hrwtz">
 	
 	<?php // Mobile Friendly ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -30,8 +30,7 @@ add_action('admin_menu', 'quindo_remove_admin_menu_items');
 
 // Register styles for WYSIWYG editor
 function quindo_editor_styles() {
-    if (WP_ENV === 'production')
-        $quindo_file_suffix = '.min';
+    $quindo_file_suffix = (WP_ENV === 'production') ? '.min' : '';
     add_editor_style( '_/css/editor-style'.$quindo_file_suffix.'.css' );
 }
 add_action( 'after_setup_theme', 'quindo_editor_styles' );
@@ -75,4 +74,5 @@ add_filter( 'mce_buttons_2', 'mce_add_buttons' );
 
 
 // Disable admin editor. Should be in config.php but let's add it here just in case
-define('DISALLOW_FILE_EDIT', TRUE);
+if (DISALLOW_FILE_EDIT === null)
+    define('DISALLOW_FILE_EDIT', TRUE);

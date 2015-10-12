@@ -2,8 +2,7 @@
 
 // we're firing all out initial functions at the start
 function quindo_scripts_and_styles() {
-    if (WP_ENV === 'production')
-        $quindo_file_suffix = '.min';
+    $quindo_file_suffix = (WP_ENV === 'production') ? '.min' : '';
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
     if (!is_admin()) {
 
